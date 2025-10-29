@@ -5,4 +5,4 @@ console.log('Script loaded') // <-- missing semicolon on purpose to test lint st
 function showNote() {
   console.log('This site has an automated JS linter in CI.')
 }
-showNote();
+showNote()
