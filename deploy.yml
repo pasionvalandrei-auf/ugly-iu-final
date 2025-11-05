@@ -39,11 +39,12 @@ jobs:
 
       - name: Run Jest tests
         run: npm test
+        continue-on-error: false   # ✅ ensures workflow stops on test failure
 
   deploy:
     runs-on: ubuntu-latest
     needs: [lint, test]
-    if: success()
+    if: success()                  # ✅ deploy only if both lint & test succeed
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
