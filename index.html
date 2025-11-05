@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ugly UI Showcase — How I'd Improve It</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Ugly UI Showcase</h1>
+    <p class="subtitle">A demo static site showing an intentionally ugly UI screenshot and improvements.</p>
+  </header>
+
+  <main class="container">
+    <section class="screenshot">
+      <h2>Screenshot: “The Ugliest UI”</h2>
+      <p class="caption">
+        Replace <code>public/images/ugliest-ui.png</code> with your screenshot file.
+        If no image is present, this area will show a placeholder box.
+      </p>
+      <div class="img-wrap">
+        <img src="ugliest-ui.png" alt="Ugly UI screenshot (replace this file)" onerror="this.style.visibility='hidden'; document.getElementById('placeholder').style.display='flex'">
+        <div id="placeholder" class="placeholder" style="display:none;">
+          <strong>No image found</strong>
+          <span>Put your screenshot at <code>public/images/ugliest-ui.png</code></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="analysis">
+      <h2>Why this UI is bad</h2>
+      <ul>
+        <li>Poor visual hierarchy — everything competes for attention.</li>
+        <li>Clashing colors that fail accessibility contrast checks.</li>
+        <li>Inconsistent spacing and alignment — looks unprofessional.</li>
+        <li>Tiny (or unclear) affordances for important actions (bad UX).</li>
+        <li>No responsive behavior — breaks on mobile widths.</li>
+      </ul>
+
+      <h2>What I would do to improve it</h2>
+      <ol>
+        <li><strong>Establish hierarchy:</strong> define clear headings, subheadings, and supporting text; use size/weight and whitespace to separate elements.</li>
+        <li><strong>Color and contrast:</strong> pick a constrained palette (2–3 core colors) and ensure WCAG contrast for text and controls.</li>
+        <li><strong>Spacing & layout:</strong> use an 8px-based spacing scale and consistent grid/alignment rules. That immediately organizes content visually.</li>
+        <li><strong>Typography:</strong> choose a legible font stack, consistent sizes for body / headings, and limit line length for readability.</li>
+        <li><strong>Affordances & CTA clarity:</strong> make primary actions visually distinct (size, color), and ensure clickable controls look clickable.</li>
+        <li><strong>Accessibility:</strong> add semantic HTML, ARIA where needed, keyboard focus states, and test with a screen reader and color-blind simulations.</li>
+        <li><strong>Responsive design:</strong> implement breakpoints and ensure the layout adapts for mobile and tablet.</li>
+        <li><strong>Progressive enhancements:</strong> improve performance (minify assets), lazy-load big images, and keep JS non-blocking.</li>
+      </ol>
+
+      <p class="note">This site is intended as a demonstration for SCM / CI/CD: it contains a linter step (ESLint) in CI that will block deployment until JS quality issues are fixed.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Built for SCM/CI demonstration — push to <code>main</code> to run workflow.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

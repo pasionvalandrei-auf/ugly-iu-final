@@ -1,0 +1,82 @@
+:root{
+  --max-width: 900px;
+  --accent: #d9534f;
+  --muted: #6b6b6b;
+  --bg: #fafafa;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  background:var(--bg);
+  color:#222;
+  line-height:1.45;
+}
+
+.hero{
+  background: linear-gradient(90deg, #fff 0%, #f2f2f2 100%);
+  padding: 28px 16px;
+  border-bottom: 4px solid var(--accent);
+  text-align:center;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:28px auto;
+  padding: 0 16px;
+}
+
+.screenshot .img-wrap{
+  border: 3px dashed #ccc;
+  padding: 12px;
+  min-height: 220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.screenshot img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.placeholder{
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  color:var(--muted);
+  padding: 18px;
+  border-radius:8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.analysis h2{margin-top:20px}
+ul,ol{margin-left:1.25rem}
+
+.footer{
+  padding: 18px;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.9rem;
+  border-top:1px solid #eee;
+  margin-top:36px;
+}
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  border-radius: 50%;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
