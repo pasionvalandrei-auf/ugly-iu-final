@@ -1,10 +1,8 @@
 const { addNumbers, isEven } = require('./functions');
 
-// ❌ This test will fail intentionally
-test('should fail on purpose', () => {
-  expect(2 + 2).toBe(5);
+test('should pass after fixing', () => {
+  expect(2 + 2).toBe(4);
 });
-
 // ✅ This test will pass
 test('isEven correctly identifies odd number', () => {
   expect(isEven(3)).toBe(false);
