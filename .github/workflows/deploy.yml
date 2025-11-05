@@ -1,4 +1,4 @@
-name: deploy-site
+name: CI: Lint → Test → Deploy (GitHub Pages will also trigger a separate Pages build)
 
 on:
   push:
@@ -50,8 +50,11 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    # Only run deploy when lint and test succeeded and the actor is not the GitHub Actions bot.
+    # Note: when the peaceiris action pushes to the `gh-pages` branch it will trigger
+    # GitHub's own "pages build and deployment" run — that is expected and separate.
     needs: [lint, test]
-    if: ${{ success() }}
+    if: ${{ success() && github.actor != 'github-actions[bot]' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
