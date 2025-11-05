@@ -4,7 +4,7 @@
   "description": "Static site with animated visuals and Jest testing setup",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
+  "lint": "node ./node_modules/eslint/bin/eslint.js . --ext .js",
     "test": "jest"
   },
   "devDependencies": {
