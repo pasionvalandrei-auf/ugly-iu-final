@@ -45,6 +45,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lint, test]
     if: ${{ success() }}
+    # Grant write permissions for the deploy job only so the GITHUB_TOKEN can push to gh-pages
+    permissions:
+      contents: write
+      pages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
